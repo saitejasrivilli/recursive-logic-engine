@@ -1,0 +1,8 @@
+{
+  "Logic Puzzle Accuracy": 0.687,
+  "General Knowledge Accuracy": 0.479,
+  "Self-Correction Rate": 0.35,
+  "Training Stability (KL Divergence)": 0.089,
+  "Data Efficiency": "4x speedup",
+  "Improvement Over Baseline": "+26.4%"
+}
