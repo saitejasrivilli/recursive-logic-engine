@@ -1,0 +1,36 @@
+data:
+  quality_filter:
+    enabled: true
+    scorer_model: "gpt2"  # Fast scorer for pre-filtering
+    scorer_batch_size: 64
+    top_k_percent: 0.25  # Keep top 25% of data
+    
+  datasets:
+    logic_puzzles:
+      source: "local"  # or "huggingface"
+      path: "data/logic_puzzles.jsonl"
+      size: 30000
+      split_ratio: 0.8  # 80% train, 10% val, 10% test
+      
+    gsm8k:
+      source: "huggingface"
+      name: "openai/gsm8k"
+      config: "main"
+      size: 7000  # Training set
+      
+    math:
+      source: "huggingface"
+      name: "hendrycks/competition_math"
+      size: 3000
+      
+  preprocessing:
+    max_length: 512
+    padding: "max_length"
+    truncation: true
+    add_thinking_tokens: true  # Add <think> token to vocab
+
+  augmentation:
+    enabled: false
+    strategies:
+      - "paraphrase"
+      - "template_variation"

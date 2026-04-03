@@ -1,0 +1,5 @@
+{"question": "What is the capital of France?", "answer": "Paris", "choices": ["London", "Paris", "Berlin", "Madrid"], "category": "geography"}
+{"question": "In what year did World War II end?", "answer": "1945", "choices": ["1942", "1944", "1945", "1946"], "category": "history"}
+{"question": "What is the chemical symbol for Gold?", "answer": "Au", "choices": ["Go", "Au", "Gd", "Ag"], "category": "chemistry"}
+{"question": "Who wrote 'Pride and Prejudice'?", "answer": "Jane Austen", "choices": ["Jane Austen", "Charlotte Bronte", "Emily Dickinson", "George Eliot"], "category": "literature"}
+{"question": "What is the largest planet in our solar system?", "answer": "Jupiter", "choices": ["Saturn", "Jupiter", "Neptune", "Uranus"], "category": "science"}

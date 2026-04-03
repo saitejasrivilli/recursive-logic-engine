@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  recursive-logic-engine:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: recursive-logic-engine
+    
+    # Use GPU if available
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    
+    # Environment variables
+    environment:
+      - PYTHONUNBUFFERED=1
+      - CUDA_VISIBLE_DEVICES=0
+      - WANDB_MODE=offline  # Set to 'online' if you want W&B logging
+      # - WANDB_API_KEY=your_key_here  # Add your W&B API key
+    
+    # Volume mounts
+    volumes:
+      - .:/app
+      - ./outputs:/app/outputs
+      - ./logs:/app/logs
+      - ./data:/app/data
+    
+    # Ports (if using inference API)
+    ports:
+      - "8000:8000"
+    
+    # Keep container running
+    stdin_open: true
+    tty: true
+    
+    # Memory limits
+    mem_limit: 32g
+    memswap_limit: 32g
+
+  # Optional: Weights & Biases service
+  wandb:
+    image: wandb/local:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - WANDB_BASE_URL=http://localhost:8080
+    volumes:
+      - wandb_data:/data
+
+volumes:
+  wandb_data:
