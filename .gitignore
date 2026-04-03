@@ -1,66 +1,18 @@
-# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*$py.class
 *.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Virtual environments
 venv/
 ENV/
-env/
 .venv
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
 .DS_Store
-
-# Project specific
-outputs/
-logs/
+.idea/
+.vscode/
+*.swp
 *.log
 *.pt
 *.pth
 checkpoint_*
 wandb/
 .wandb/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Pycache
 .pytest_cache/
 .mypy_cache/
-
-# Egg info
-*.egg-info/
-recursive-logic-engine.egg-info/
-
-# Don't track these
-venv/
-outputs/checkpoints/
-logs/
-*.pt
-*.pth
